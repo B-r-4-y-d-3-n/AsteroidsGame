@@ -17,13 +17,13 @@ public void draw()
     if(key == 'a' || key == 'A'){
       joe.turn(-10);
     }
-    if(key == ' '){
+    if(key == 'w' || key == 'W'){
       joe.accelerate(.1);
     }
     if(key == 'd' || key == 'D'){
       joe.turn(10);
     }
-    if(key == 'g' || key == 'G'){
+    if(key == 's' || key == 'S'){
       joe.accelerate(-.1);
     }
     if(key == 'f' || key == 'F'){
