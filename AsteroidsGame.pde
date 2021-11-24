@@ -23,6 +23,9 @@ public void draw()
     if(key == 'd' || key == 'D'){
       joe.turn(10);
     }
+    if(key == 'g' || key == 'G'){
+      joe.accelerate(-.1);
+    }
     if(key == 'f' || key == 'F'){
       joe.setXspeed(0);
     }
