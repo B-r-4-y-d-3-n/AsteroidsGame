@@ -26,11 +26,12 @@ public void draw()
     if(key == 's' || key == 'S'){
       joe.accelerate(-.1);
     }
-    if(key == 'f' || key == 'F'){
+    if(key == ' '){
       joe.setXspeed(0);
-    }
-    if(key == 'j' || key == 'J'){
       joe.setYspeed(0);
+      joe.myCenterX = (int)(Math.random()*1000);
+      joe.myCenterY = (int)(Math.random()*1000);
+      joe.myPointDirection = (int)(Math.random()*360);
     }
   }
   joe.move();
