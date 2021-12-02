@@ -1,5 +1,6 @@
 Star [] bob;
 Spaceship joe = new Spaceship();
+boolean right, left;
 public void setup()
 {
   size(1000,1000);
@@ -13,27 +14,41 @@ public void draw()
   for(int i = 0; i < bob.length; i++){
     bob[i].show();
 }
-  if(keyPressed){
-    if(key == 'a' || key == 'A'){
-      joe.turn(-10);
+joe.show();
+joe.move();
+if(left){
+  joe.turn(-5);
+}
+if(right){
+  joe.turn(5);
+}
+}
+  public void keyPressed(){
+    if(keyCode == 37){
+      left = true;
     }
-    if(key == 'w' || key == 'W'){
+    if(keyCode == 39){
+      right = true;
+    }
+    if(keyCode == 38){
       joe.accelerate(.1);
     }
-    if(key == 'd' || key == 'D'){
-      joe.turn(10);
-    }
-    if(key == 's' || key == 'S'){
+    if(keyCode == 40){
       joe.accelerate(-.1);
     }
     if(key == ' '){
       joe.setXspeed(0);
       joe.setYspeed(0);
-      joe.myCenterX = (int)(Math.random()*1000);
-      joe.myCenterY = (int)(Math.random()*1000);
-      joe.myPointDirection = (int)(Math.random()*360);
+      joe.myCenterX = (int)(Math.random()*1001);
+      joe.myCenterY = (int)(Math.random()*1001);
+      joe.myPointDirection = (int)(Math.random()*361);
     }
-  }
-  joe.move();
-  joe.show();
+   }
+  public void keyReleased(){
+    if(keyCode == 37){
+      left = false;
+    }
+    if(keyCode == 39){
+      right = false;
+    }
  }
