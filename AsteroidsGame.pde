@@ -1,7 +1,6 @@
 Star [] bob;
 Spaceship joe = new Spaceship();
 boolean right, left;
-ArrayList <Asteroid> jeff = new ArrayList <Asteroid>();
 public void setup()
 {
   size(750,750);
@@ -14,11 +13,6 @@ public void draw()
   background(0);
   for(int i = 0; i < bob.length; i++){
     bob[i].show();
-}
-for(int i = 0; i < 10; i++){
-    jeff.add(new Asteroid());
-    jeff.get(i).show();
-    jeff.get(i).move();
 }
 joe.show();
 joe.move();
