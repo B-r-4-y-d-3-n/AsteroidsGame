@@ -33,6 +33,12 @@ if(right){
     if(keyCode == 37){
       left = true;
     }
+    if(key == 'a' || key == 'A'){
+    joe.accelerate(5);
+    }
+    if(key == 's' || key == 'S'){
+    joe.accelerate(-5);
+    }
     if(keyCode == 39){
       right = true;
     }
