@@ -23,30 +23,24 @@ for(int i = 0; i < 10; i++){
 joe.show();
 joe.move();
 if(left){
-  joe.turn(-5);
+  joe.turn(-10);
 }
 if(right){
-  joe.turn(5);
+  joe.turn(10);
 }
 }
   public void keyPressed(){
     if(keyCode == 37){
       left = true;
     }
-    if(key == 'a' || key == 'A'){
-    joe.accelerate(5);
-    }
-    if(key == 's' || key == 'S'){
-    joe.accelerate(-5);
-    }
     if(keyCode == 39){
       right = true;
     }
     if(keyCode == 38){
-      joe.accelerate(.1);
+      joe.accelerate(5);
     }
     if(keyCode == 40){
-      joe.accelerate(-.1);
+      joe.accelerate(-5);
     }
     if(key == ' '){
       joe.setXspeed(0);
