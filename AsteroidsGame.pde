@@ -1,13 +1,17 @@
 Star [] bob;
 Spaceship joe = new Spaceship();
 boolean right, left;
+int x = (int)(Math.random()*20)+15;
 ArrayList <Asteroid> jeff = new ArrayList <Asteroid>();
 public void setup()
 {
   size(750,750);
-  bob = new Star[1000];
+  bob = new Star[100];
   for(int i = 0; i < bob.length; i++)
     bob[i] = new Star();
+    for(int i = 0; i < x; i++){
+    jeff.add(new Asteroid());
+    }
 }
 public void draw() 
 {
@@ -15,10 +19,12 @@ public void draw()
   for(int i = 0; i < bob.length; i++){
     bob[i].show();
 }
-for(int i = 0; i < 10; i++){
-    jeff.add(new Asteroid());
+for(int i = 0; i < jeff.size(); i++){
     jeff.get(i).show();
     jeff.get(i).move();
+    float d = dist(joe.getX(), joe.getY(), jeff.get(i).getX(), jeff.get(i).getY());
+    if(d < 20)
+    jeff.remove(i);
 }
 joe.show();
 joe.move();
@@ -37,11 +43,11 @@ if(right){
       right = true;
     }
     if(keyCode == 38){
-      joe.accelerate(5);
-    }
+      joe.accelerate(1);
+      }
     if(keyCode == 40){
-      joe.accelerate(-5);
-    }
+      joe.accelerate(-1);
+      }
     if(key == ' '){
       joe.setXspeed(0);
       joe.setYspeed(0);
